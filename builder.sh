@@ -4,7 +4,7 @@
 	git clone -q --depth=1 https://github.com/mvaisakh/gcc-arm -b gcc-master $HOME/gcc-arm32
 	git clone -q --depth=1 https://gitlab.com/Panchajanya1999/azure-clang $HOME/clang
 	git clone -q --depth=1 https://github.com/Tashar02/AnyKernel3-4.19.git $HOME/Repack
-	git clone -q --depth=1 https://github.com/Tashar02/android_kernel_xiaomi_sdm660-1.git -b scarlet $HOME/Kernel
+	git clone -q --depth=1 https://github.com/Atom-X-Devs/android_kernel_xiaomi_sdm660 -b Android-S $HOME/Kernel
 
 	pip3 -q install telegram-send
 
