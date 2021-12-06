@@ -57,6 +57,7 @@
 			CC=$CC                         \
 			LLVM=1                         \
 			LLVM_IAS=1                     \
+			PYTHON=python3		       \
 			HOSTCC=$HOSTCC                 \
 			HOSTCXX=$HOSTCXX               \
 			CROSS_COMPILE=$CC_64           \
