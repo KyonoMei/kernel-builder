@@ -18,7 +18,7 @@ jobs:
     - name: Set Timezone
       run: ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
     - name: Install Packages
-      run: apt-get -y install gcc llvm lld g++-multilib python2 clang gcc git libxml2 python3-pip default-jre automake lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng bc libstdc++6 libncurses5 wget python3 libssl-dev openssl rsync flex git-lfs libz3-dev libz3-4 axel tar bc binutils-dev ca-certificates ccache cmake curl file libelf-dev ninja-build python3-dev texinfo u-boot-tools xz-utils zlib1g-dev && python3 -m pip install networkx
+      run: apt-get -y install gcc llvm lld g++-multilib python2 clang gcc git libxml2 python3-pip default-jre automake lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng bc libstdc++6 libncurses5 wget python3 libssl-dev libssl1.1 openssl rsync flex git-lfs libz3-dev libz3-4 axel tar bc binutils-dev ca-certificates ccache cmake curl file libelf-dev ninja-build python3-dev texinfo u-boot-tools xz-utils zlib1g-dev && python3 -m pip install networkx
     - name: Proceed With Compilation
       run: bash builder.sh
       
