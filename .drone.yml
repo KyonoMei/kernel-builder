@@ -1,9 +1,10 @@
 kind: pipeline
-name: Tempest Drone
+type: docker
+name: Scarlet-X Drone
 
 steps:
  - name: compile
-   image: archlinux:base-devel
+   image: ubuntu:jammy-20211029
    environment:
      BOT_API_KEY:
        from_secret: BOT_API_KEY
@@ -12,7 +13,11 @@ steps:
      SOURCE:
        from_secret: SOURCE
    commands:
-      - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
-      - pacman -Syu --noconfirm --needed git bc inetutils zip libxml2 python3 jre-openjdk jdk-openjdk flex bison libc++ python-pip
+      - cp -af sources.list /etc/apt/
+      - cp -af 99own /etc/apt/apt.conf.d/
+      - apt-get update && apt-get -y clean && apt-get -y autoremove && apt-get -y upgrade
+      - apt-get install -yq tzdata
+      - ln -fs /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && date
+      - apt-get -y install git bison flex libxml2 libssl-dev bc zip default-jre python3 python3-pip wget
       - cd /drone/src
       - bash builder.sh
